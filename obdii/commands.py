@@ -8,13 +8,14 @@ from decoders import *
 ext_commands = {
 #                                          name                       description                          cmd           bytes       decoder              ECU          fast
     'CAN_HEADER_7E0':          OBDCommand("CAN_HEADER_7E0",          "Set CAN module ID to 7E0"          , b"ATSH7E0" ,  0,          raw_string          ,ECU.UNKNOWN, False),
+    'CAN_HEADER_7E1':          OBDCommand("CAN_HEADER_7E1",          "Set CAN module ID to 7E1"          , b"ATSH7E1" ,  0,          raw_string          ,ECU.UNKNOWN, False),
     'CAN_HEADER_7E4':          OBDCommand("CAN_HEADER_7E4",          "Set CAN module ID to 7E4"          , b"ATSH7E4" ,  0,          raw_string          ,ECU.UNKNOWN, False),
-    'CAN_HEADER_7E6':          OBDCommand("CAN_HEADER_7E6",          "Set CAN module ID to 7E6"          , b"ATSH7E6" ,  0,          raw_string          ,ECU.UNKNOWN, False),
+    'CAN_HEADER_7E7':          OBDCommand("CAN_HEADER_7E7",          "Set CAN module ID to 7E7"          , b"ATSH7E7" ,  0,          raw_string          ,ECU.UNKNOWN, False),
 
-    'CAN_RECEIVE_ADDRESS_7EC': OBDCommand("CAN_RECEIVE_ADDRESS_7EC", "Set the CAN receive address to 7EC"                  , b"ATCRA7EC",  0, raw_string          , ECU.UNKNOWN, False),
-    'CAN_RECEIVE_ADDRESS_7EA': OBDCommand("CAN_RECEIVE_ADDRESS_7EA", "Set the CAN receive address to 7EA"                  , b"ATCRA7EA",  0, raw_string          , ECU.UNKNOWN, False),
-    'CAN_RECEIVE_ADDRESS_7A8': OBDCommand("CAN_RECEIVE_ADDRESS_7A8", "Set the CAN receive address to 7A8"                  , b"ATCRA7A8",  0, raw_string          , ECU.UNKNOWN, False),
-    'CAN_RECEIVE_ADDRESS_7EE': OBDCommand("CAN_RECEIVE_ADDRESS_7EE", "Set the CAN receive address to 7EE"                  , b"ATCRA7EE",  0, raw_string          , ECU.UNKNOWN, False),
+    'CAN_RECEIVE_ADDRESS_7E8': OBDCommand("CAN_RECEIVE_ADDRESS_7E8", "Set the CAN receive address to 7E8"          , b"ATCRA7E8",  0, raw_string          , ECU.UNKNOWN, False),
+    'CAN_RECEIVE_ADDRESS_7E9': OBDCommand("CAN_RECEIVE_ADDRESS_7E9", "Set the CAN receive address to 7E9"          , b"ATCRA7E9",  0, raw_string          , ECU.UNKNOWN, False),
+    'CAN_RECEIVE_ADDRESS_7EC': OBDCommand("CAN_RECEIVE_ADDRESS_7EC", "Set the CAN receive address to 7EC"          , b"ATCRA7EC",  0, raw_string          , ECU.UNKNOWN, False),
+    'CAN_RECEIVE_ADDRESS_7EF': OBDCommand("CAN_RECEIVE_ADDRESS_7EF", "Set the CAN receive address to 7EF"          , b"ATCRA7EF",  0, raw_string          , ECU.UNKNOWN, False),
 
     'CAN_FILTER_7CE':          OBDCommand("CAN_FILTER_7CE",          "Set the CAN filter to 7CE"                           , b"ATCF7CE" ,  0, raw_string          , ECU.UNKNOWN, False),
     
