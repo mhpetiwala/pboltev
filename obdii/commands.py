@@ -6,12 +6,10 @@ from decoders import *
 # flake8: noqa
 
 ext_commands = {
-#                                          name                       description                                            cmd        bytes decoder               ECU         fast
-    'CAN_HEADER_7E4':          OBDCommand("CAN_HEADER_7E4",          "Set CAN module ID to 7E4 - BMS battery information"  , b"ATSH7E4" ,  0, raw_string          , ECU.UNKNOWN, False),
-    'CAN_HEADER_7C6':          OBDCommand("CAN_HEADER_7C6",          "Set CAN module ID to 7C6 - Odometer information"     , b"ATSH7C6" ,  0, raw_string          , ECU.UNKNOWN, False),
-    'CAN_HEADER_7E2':          OBDCommand("CAN_HEADER_7E2",          "Set CAN module ID to 7E2 - VMCU information"         , b"ATSH7E2" ,  0, raw_string          , ECU.UNKNOWN, False),
-    'CAN_HEADER_7A0':          OBDCommand("CAN_HEADER_7A0",          "Set CAN module ID to 7A0 - TPMS information"         , b"ATSH7A0" ,  0, raw_string          , ECU.UNKNOWN, False),
-    'CAN_HEADER_7E6':          OBDCommand("CAN_HEADER_7E6",          "Set CAN module ID to 7E6 - External temp information", b"ATSH7E6" ,  0, raw_string          , ECU.UNKNOWN, False),
+#                                          name                       description                          cmd           bytes       decoder              ECU          fast
+    'CAN_HEADER_7E0':          OBDCommand("CAN_HEADER_7E0",          "Set CAN module ID to 7E0"          , b"ATSH7E0" ,  0,          raw_string          ,ECU.UNKNOWN, False),
+    'CAN_HEADER_7E4':          OBDCommand("CAN_HEADER_7E4",          "Set CAN module ID to 7E4"          , b"ATSH7E4" ,  0,          raw_string          ,ECU.UNKNOWN, False),
+    'CAN_HEADER_7E6':          OBDCommand("CAN_HEADER_7E6",          "Set CAN module ID to 7E6"          , b"ATSH7E6" ,  0,          raw_string          ,ECU.UNKNOWN, False),
 
     'CAN_RECEIVE_ADDRESS_7EC': OBDCommand("CAN_RECEIVE_ADDRESS_7EC", "Set the CAN receive address to 7EC"                  , b"ATCRA7EC",  0, raw_string          , ECU.UNKNOWN, False),
     'CAN_RECEIVE_ADDRESS_7EA': OBDCommand("CAN_RECEIVE_ADDRESS_7EA", "Set the CAN receive address to 7EA"                  , b"ATCRA7EA",  0, raw_string          , ECU.UNKNOWN, False),
