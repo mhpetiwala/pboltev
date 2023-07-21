@@ -107,6 +107,34 @@ def bat_pack_volt_min_max(messages):
     #((A*256)+B)*0.52
     return ((d[3]*256)+d[4])*0.52
 
+def hv_current_hd(messages):
+    d=messages[0].data
+    if len(d) == 0:
+        return None
+    #(Signed(A)*256+B)/20
+    return (bytes_to_int_signed(d[3])*256+d[4])/20
+
+def hv_current(messages):
+    d=messages[0].data
+    if len(d) == 0:
+        return None
+    #(Signed(A)*256+B)/(-6.675)
+    return (bytes_to_int_signed(d[3])*256+d[4])/(-6.675)
+
+def ambient_air_temp(messages): 
+    d=messages[0].data
+    if len(d) == 0:
+        return None
+    #(A-40)
+    return d[3]-40
+
+def bat_cell_volt(messages):
+    d=messages[0].data
+    if len(d) == 0:
+        return None
+    #((A*256)+B)*5/65535
+    return ((d[3]*256)+d[3])*5/65535
+
 # 0 to 500 volts
 def ac_voltage(messages): 
     d=messages[0].data
@@ -114,7 +142,7 @@ def ac_voltage(messages):
         return None
     return d[3]*2
 
-def coolant_temp(messages): 
+def ambient_air_temp(messages): 
     d=messages[0].data
     if len(d) == 0:
         return None
