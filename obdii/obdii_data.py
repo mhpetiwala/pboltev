@@ -1765,44 +1765,774 @@ def main():
         logger.debug(connection.print_commands())
 
         bolt_state={}
+
         try:
-            bolt_state['charge_voltage']=query_ac_voltage(connection)
+            bolt_state["bat_pack_cap_ah_raw_2018"]=query_bat_pack_cap_ah_raw_2018(connection)
         except (ValueError, CanError) as err:
-            logger.warning("**** Error querying ac voltage: {} ****"
-                           .format(err), exc_info=False)
-        try:
-            bolt_state["charge_current"]=query_ac_current(connection)
-        except (ValueError, CanError) as err:
-            logger.warning("**** Error querying ac voltage: {} ****"
-                           .format(err), exc_info=False)
+            logger.warning("**** Error querying bat_pack_cap_ah_raw_2018: {} ****".format(err), exc_info=False)
         
+
         try:
-            bolt_state["charge_level"]=query_charging_level(connection)
+            bolt_state["bat_pack_cap_ah_raw_2019"]=query_bat_pack_cap_ah_raw_2019(connection)
         except (ValueError, CanError) as err:
-            logger.warning("**** Error querying ac voltage: {} ****"
-                           .format(err), exc_info=False)
+            logger.warning("**** Error querying bat_pack_cap_ah_raw_2019: {} ****".format(err), exc_info=False)
         
+
         try:
-            bolt_state["battery_charge"]=query_bat_soc(connection)
+            bolt_state["bat_pack_cap_kwh_est_2018"]=query_bat_pack_cap_kwh_est_2018(connection)
         except (ValueError, CanError) as err:
-            logger.warning("**** Error querying ac voltage: {} ****"
-                           .format(err), exc_info=False)
+            logger.warning("**** Error querying bat_pack_cap_kwh_est_2018: {} ****".format(err), exc_info=False)
+        
+
         try:
-            bolt_state["battery_coolant_temp"]=query_bat_coolant_temp(connection)
+            bolt_state["bat_pack_cap_kwh_est_2019"]=query_bat_pack_cap_kwh_est_2019(connection)
         except (ValueError, CanError) as err:
-            logger.warning("**** Error querying ac voltage: {} ****"
-                           .format(err), exc_info=False)
+            logger.warning("**** Error querying bat_pack_cap_kwh_est_2019: {} ****".format(err), exc_info=False)
+        
+
         try:
-            bolt_state["electronics_coolant_temp"]=query_elec_coolant_temp(connection)
+            bolt_state["bat_pack_soc_disp"]=query_bat_pack_soc_disp(connection)
         except (ValueError, CanError) as err:
-            logger.warning("**** Error querying ac voltage: {} ****"
-                           .format(err), exc_info=False)
+            logger.warning("**** Error querying bat_pack_soc_disp: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_pack_soc_raw_hd"]=query_bat_pack_soc_raw_hd(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_pack_soc_raw_hd: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_pack_soc_raw_ld"]=query_bat_pack_soc_raw_ld(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_pack_soc_raw_ld: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_pack_soc_raw_ld2"]=query_bat_pack_soc_raw_ld2(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_pack_soc_raw_ld2: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_pack_soc_raw_ld3"]=query_bat_pack_soc_raw_ld3(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_pack_soc_raw_ld3: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_pack_soc_var"]=query_bat_pack_soc_var(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_pack_soc_var: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_pack_current_hd"]=query_bat_pack_current_hd(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_pack_current_hd: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_pack_num_charges"]=query_bat_pack_num_charges(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_pack_num_charges: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_mod_temp_1"]=query_bat_mod_temp_1(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_mod_temp_1: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_mod_temp_2"]=query_bat_mod_temp_2(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_mod_temp_2: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_mod_temp_3"]=query_bat_mod_temp_3(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_mod_temp_3: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_mod_temp_4"]=query_bat_mod_temp_4(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_mod_temp_4: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_mod_temp_5"]=query_bat_mod_temp_5(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_mod_temp_5: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_mod_temp_6"]=query_bat_mod_temp_6(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_mod_temp_6: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_mod_temp_max"]=query_bat_mod_temp_max(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_mod_temp_max: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_mod_temp_min"]=query_bat_mod_temp_min(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_mod_temp_min: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_mod_temp_avg"]=query_bat_mod_temp_avg(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_mod_temp_avg: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_min"]=query_bat_cell_volt_min(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_min: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_min_num"]=query_bat_cell_volt_min_num(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_min_num: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_max"]=query_bat_cell_volt_max(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_max: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_max_num"]=query_bat_cell_volt_max_num(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_max_num: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_avg"]=query_bat_cell_volt_avg(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_avg: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_pack_resistance"]=query_bat_pack_resistance(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_pack_resistance: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_pack_volt_min"]=query_bat_pack_volt_min(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_pack_volt_min: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_pack_volt_max"]=query_bat_pack_volt_max(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_pack_volt_max: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["hv_current_hd"]=query_hv_current_hd(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying hv_current_hd: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["hv_current"]=query_hv_current(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying hv_current: {} ****".format(err), exc_info=False)
+        
+
         try:
             bolt_state["ambient_air_temp"]=query_ambient_air_temp(connection)
         except (ValueError, CanError) as err:
-            logger.warning("**** Error querying ac voltage: {} ****"
-                           .format(err), exc_info=False)
+            logger.warning("**** Error querying ambient_air_temp: {} ****".format(err), exc_info=False)
+        
 
+        try:
+            bolt_state["bat_cell_volt_01"]=query_bat_cell_volt_01(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_01: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_02"]=query_bat_cell_volt_02(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_02: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_03"]=query_bat_cell_volt_03(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_03: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_04"]=query_bat_cell_volt_04(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_04: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_05"]=query_bat_cell_volt_05(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_05: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_06"]=query_bat_cell_volt_06(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_06: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_07"]=query_bat_cell_volt_07(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_07: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_08"]=query_bat_cell_volt_08(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_08: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_09"]=query_bat_cell_volt_09(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_09: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_10"]=query_bat_cell_volt_10(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_10: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_11"]=query_bat_cell_volt_11(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_11: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_12"]=query_bat_cell_volt_12(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_12: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_13"]=query_bat_cell_volt_13(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_13: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_14"]=query_bat_cell_volt_14(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_14: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_15"]=query_bat_cell_volt_15(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_15: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_16"]=query_bat_cell_volt_16(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_16: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_17"]=query_bat_cell_volt_17(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_17: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_18"]=query_bat_cell_volt_18(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_18: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_19"]=query_bat_cell_volt_19(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_19: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_20"]=query_bat_cell_volt_20(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_20: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_21"]=query_bat_cell_volt_21(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_21: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_22"]=query_bat_cell_volt_22(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_22: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_23"]=query_bat_cell_volt_23(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_23: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_24"]=query_bat_cell_volt_24(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_24: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_25"]=query_bat_cell_volt_25(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_25: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_26"]=query_bat_cell_volt_26(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_26: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_27"]=query_bat_cell_volt_27(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_27: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_28"]=query_bat_cell_volt_28(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_28: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_29"]=query_bat_cell_volt_29(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_29: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_30"]=query_bat_cell_volt_30(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_30: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_31"]=query_bat_cell_volt_31(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_31: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_32"]=query_bat_cell_volt_32(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_32: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_33"]=query_bat_cell_volt_33(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_33: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_34"]=query_bat_cell_volt_34(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_34: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_35"]=query_bat_cell_volt_35(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_35: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_36"]=query_bat_cell_volt_36(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_36: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_37"]=query_bat_cell_volt_37(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_37: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_38"]=query_bat_cell_volt_38(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_38: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_39"]=query_bat_cell_volt_39(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_39: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_40"]=query_bat_cell_volt_40(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_40: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_41"]=query_bat_cell_volt_41(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_41: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_42"]=query_bat_cell_volt_42(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_42: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_43"]=query_bat_cell_volt_43(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_43: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_44"]=query_bat_cell_volt_44(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_44: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_45"]=query_bat_cell_volt_45(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_45: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_46"]=query_bat_cell_volt_46(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_46: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_47"]=query_bat_cell_volt_47(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_47: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_48"]=query_bat_cell_volt_48(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_48: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_49"]=query_bat_cell_volt_49(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_49: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_50"]=query_bat_cell_volt_50(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_50: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_51"]=query_bat_cell_volt_51(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_51: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_52"]=query_bat_cell_volt_52(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_52: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_53"]=query_bat_cell_volt_53(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_53: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_54"]=query_bat_cell_volt_54(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_54: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_55"]=query_bat_cell_volt_55(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_55: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_56"]=query_bat_cell_volt_56(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_56: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_57"]=query_bat_cell_volt_57(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_57: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_58"]=query_bat_cell_volt_58(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_58: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_59"]=query_bat_cell_volt_59(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_59: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_60"]=query_bat_cell_volt_60(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_60: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_61"]=query_bat_cell_volt_61(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_61: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_62"]=query_bat_cell_volt_62(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_62: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_63"]=query_bat_cell_volt_63(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_63: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_64"]=query_bat_cell_volt_64(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_64: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_65"]=query_bat_cell_volt_65(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_65: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_66"]=query_bat_cell_volt_66(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_66: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_67"]=query_bat_cell_volt_67(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_67: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_68"]=query_bat_cell_volt_68(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_68: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_69"]=query_bat_cell_volt_69(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_69: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_70"]=query_bat_cell_volt_70(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_70: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_71"]=query_bat_cell_volt_71(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_71: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_72"]=query_bat_cell_volt_72(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_72: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_73"]=query_bat_cell_volt_73(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_73: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_74"]=query_bat_cell_volt_74(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_74: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_75"]=query_bat_cell_volt_75(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_75: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_76"]=query_bat_cell_volt_76(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_76: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_77"]=query_bat_cell_volt_77(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_77: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_78"]=query_bat_cell_volt_78(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_78: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_79"]=query_bat_cell_volt_79(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_79: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_80"]=query_bat_cell_volt_80(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_80: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_81"]=query_bat_cell_volt_81(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_81: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_82"]=query_bat_cell_volt_82(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_82: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_83"]=query_bat_cell_volt_83(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_83: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_84"]=query_bat_cell_volt_84(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_84: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_85"]=query_bat_cell_volt_85(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_85: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_86"]=query_bat_cell_volt_86(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_86: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_87"]=query_bat_cell_volt_87(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_87: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_88"]=query_bat_cell_volt_88(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_88: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_89"]=query_bat_cell_volt_89(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_89: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_90"]=query_bat_cell_volt_90(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_90: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_91"]=query_bat_cell_volt_91(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_91: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_92"]=query_bat_cell_volt_92(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_92: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_93"]=query_bat_cell_volt_93(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_93: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_94"]=query_bat_cell_volt_94(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_94: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_95"]=query_bat_cell_volt_95(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_95: {} ****".format(err), exc_info=False)
+        
+
+        try:
+            bolt_state["bat_cell_volt_96"]=query_bat_cell_volt_96(connection)
+        except (ValueError, CanError) as err:
+            logger.warning("**** Error querying bat_cell_volt_96: {} ****".format(err), exc_info=False)
+        
 
         mqtt_msgs.extend([{'topic': topic_prefix + "state",
                            'payload': json.dumps(bolt_state),
