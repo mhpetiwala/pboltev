@@ -16,14 +16,14 @@ def bat_pack_cap_ah_raw_2019(messages):
     #((A*256)+B)/100
     return ((d[3]*256)+d[4])/100
 
-def bat_pack_cap_ah_est_2018(messages):
+def bat_pack_cap_kwh_est_2018(messages):
     d=messages[0].data
     if len(d) == 0:
         return None
     #((A*256)+B)*0.032
     return ((d[3]*256)+d[4])*0.032
 
-def bat_pack_cap_ah_est_2019(messages):
+def bat_pack_cap_kwh_est_2019(messages):
     d=messages[0].data
     if len(d) == 0:
         return None
