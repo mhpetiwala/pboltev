@@ -19,8 +19,8 @@ ext_commands = {
 
     'BAT_PACK_CAP_AH_RAW_2018':          OBDCommand("BAT_PACK_CAP_AH_RAW_2018",          "Bat Cap Raw 2018"          , b"2241a3"     ,  0, bat_pack_cap_ah_raw_2018,     ECU.ALL    , False),
     'BAT_PACK_CAP_AH_RAW_2019':          OBDCommand("BAT_PACK_CAP_AH_RAW_2019",          "Bat Cap Raw 2019"          , b"2245f9"     ,  0, bat_pack_cap_ah_raw_2019,     ECU.ALL    , False),
-    'BAT_PACK_CAP_AH_EST_2018':          OBDCommand("BAT_PACK_CAP_AH_EST_2018",          "Bat Cap Est"          , b"2241a3"     ,  0, bat_pack_cap_ah_est_2018,     ECU.ALL    , False),
-    'BAT_PACK_CAP_AH_EST_2019':          OBDCommand("BAT_PACK_CAP_AH_EST_2019",          "Bat Cap Est"          , b"2245f9"     ,  0, bat_pack_cap_ah_est_2019,     ECU.ALL    , False),
+    'BAT_PACK_CAP_KWH_EST_2018':          OBDCommand("BAT_PACK_CAP_KWH_EST_2018",          "Bat Cap Est"          , b"2241a3"     ,  0, bat_pack_cap_kwh_est_2018,     ECU.ALL    , False),
+    'BAT_PACK_CAP_KWH_EST_2019':          OBDCommand("BAT_PACK_CAP_KWH_EST_2019",          "Bat Cap Est"          , b"2245f9"     ,  0, bat_pack_cap_kwh_est_2019,     ECU.ALL    , False),
     'BAT_PACK_SOC_DISP':          OBDCommand("BAT_PACK_SOC_DISP",          "Batt % DIC"          , b"228334"     ,  0, bat_pack_soc_disp,     ECU.ALL    , False),
     'BAT_PACK_SOC_RAW_HD':          OBDCommand("BAT_PACK_SOC_RAW_HD",          "SoC Raw HD"          , b"2243af"     ,  0, bat_pack_soc_raw_hd,     ECU.ALL    , False),
     'BAT_PACK_SOC_RAW_LD':          OBDCommand("BAT_PACK_SOC_RAW_LD",          "SoC Raw"          , b"015b"     ,  0, bat_pack_soc_raw_ld_var,     ECU.ALL    , False),
